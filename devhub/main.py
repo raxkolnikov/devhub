@@ -1,15 +1,26 @@
 import shutil
 
-result = shutil.which("python")
+tools = ["python", "git", "docker", "node", "gcc", "java", "steam", "fserrfr"]
 
-if result:
-    print("Python is installed")
-else:
-    print("Python is not installed")
+def check_tools():
+    results = {}
 
-result2 = shutil.which("git")
+    for tool in tools:
+        result = shutil.which(tool)
+        results[tool] = result
 
-if result:
-    print("Git is installed")
-else:
-    print("Git is not installed")
+    return results
+
+results = check_tools()
+print(results)
+
+
+def print_tools():
+
+    for tool in results:
+        if results[tool]:
+            print(f"{tool} is installed")
+        else:
+            print(f"{tool} is not installed")
+
+print_tools()
