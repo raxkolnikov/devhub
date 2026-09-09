@@ -3,7 +3,7 @@ import subprocess
 import time
 import os
 
-tools = ["python", "git", "docker", "node", "gcc", "java", "steam"]
+tools = ["python", "git", "docker", "node", "gcc", "java"]
 
 def check_tools(tools):
     results = {}
@@ -14,14 +14,25 @@ def check_tools(tools):
 
     return results
 
-results = check_tools(tools)
-print(results)
+results_dict = check_tools(tools)
+print(results_dict)
+
+def get_version(results_dict):
+    for tool in results_dict:
+        version = subprocess.run([tool, "--version"],
+        capture_output = True,
+        text = True
+        )
+
+        return version.stdout
+
+print(get_version(results_dict))
 
 
 def print_tools():
 
-    for tool in results:
-        if results[tool]:
+    for tool in results_dict:
+        if results_dict[tool]:
             print(f"{tool} is installed")
         else:
             print(f"{tool} is not installed")
@@ -29,10 +40,3 @@ def print_tools():
 print_tools()
 
 
-result = subprocess.run(
-    [tools[0], "--version"],
-    capture_output=True,
-    text=True
-)
-
-print(result.stdout)
