@@ -18,7 +18,3 @@ The project is being built incrementally, starting as a Linux CLI and expanding 
 ## Status
 
 Early development — currently focused on building the core CLI and learning the underlying systems step by step.
-
-## License
-
-MIT
