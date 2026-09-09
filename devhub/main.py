@@ -1,8 +1,11 @@
 import shutil
+import subprocess
+import time
+import os
 
-tools = ["python", "git", "docker", "node", "gcc", "java", "steam", "fserrfr"]
+tools = ["python", "git", "docker", "node", "gcc", "java", "steam"]
 
-def check_tools():
+def check_tools(tools):
     results = {}
 
     for tool in tools:
@@ -11,7 +14,7 @@ def check_tools():
 
     return results
 
-results = check_tools()
+results = check_tools(tools)
 print(results)
 
 
@@ -24,3 +27,12 @@ def print_tools():
             print(f"{tool} is not installed")
 
 print_tools()
+
+
+result = subprocess.run(
+    [tools[0], "--version"],
+    capture_output=True,
+    text=True
+)
+
+print(result.stdout)
