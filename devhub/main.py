@@ -19,12 +19,13 @@ print(results_dict)
 
 def get_version(results_dict):
     for tool in results_dict:
-        version = subprocess.run([tool, "--version"],
-        capture_output = True,
-        text = True
-        )
+        if results_dict[tool]:
+            version = subprocess.run([tool, "--version"],
+            capture_output = True,
+            text = True
+            )
 
-        return version.stdout
+    return version.stdout
 
 print(get_version(results_dict))
 
