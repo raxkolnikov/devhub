@@ -3,7 +3,11 @@ import subprocess
 import time
 import os
 
+# List of tools
+
 tools = ["python", "git", "docker", "node", "gcc", "java"]
+
+# Check if the tool is available in user's system
 
 def check_tools(tools):
     results = {}
@@ -17,6 +21,8 @@ def check_tools(tools):
 results_dict = check_tools(tools)
 print(results_dict)
 
+# Get tool's version if it's installed through subprocess
+
 def get_version(results_dict):
     for tool in results_dict:
         if results_dict[tool]:
@@ -29,6 +35,7 @@ def get_version(results_dict):
 
 print(get_version(results_dict))
 
+# Just a simple function to print tools
 
 def print_tools():
 
