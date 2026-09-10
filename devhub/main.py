@@ -41,9 +41,9 @@ def print_tools():
 
     for tool in results_dict:
         if results_dict[tool]:
-            print(f"{tool} is installed")
+            print(f"{tool} installed")
         else:
-            print(f"{tool} is not installed")
+            print(f"{tool} not installed")
 
 print_tools()
 
