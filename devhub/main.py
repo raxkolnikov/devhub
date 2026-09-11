@@ -2,6 +2,7 @@ import shutil
 import subprocess
 import time
 import os
+from rich.console import Console
 
 
 # List of tools
@@ -58,4 +59,9 @@ DevHub
 Developer Environment Assistant
 """)
 
-scan = input("Press enter to scan")
+scan = input("Press enter to scan: ")
+
+console = Console()
+
+with console.status("[bold green]Scanning...") as status:
+    time.sleep(1.5)
