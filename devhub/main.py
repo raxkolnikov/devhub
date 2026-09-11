@@ -24,14 +24,17 @@ print(results_dict)
 # Get tool's version if it's installed through subprocess
 
 def get_version(results_dict):
+    results = {}
+
     for tool in results_dict:
         if results_dict[tool]:
-            version = subprocess.run([tool, "--version"],
+            results[tool] = subprocess.run(
+            [tool, "--version"],
             capture_output = True,
             text = True
-            )
+            ).stdout
 
-    return version.stdout
+    return results
 
 print(get_version(results_dict))
 
