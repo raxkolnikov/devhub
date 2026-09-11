@@ -61,10 +61,11 @@ Developer Environment Assistant
 
 scan = input("Press enter to scan: ")
 
+    
 console = Console()
-
-with console.status("[bold green]Scanning...") as status:
-    time.sleep(1.5)
-
 if scan == "":
+    with console.status("[bold green]Scanning...") as status:
+        time.sleep(1.5)
+
+
     print_tools()
