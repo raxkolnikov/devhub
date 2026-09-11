@@ -3,6 +3,7 @@ import subprocess
 import time
 import os
 
+
 # List of tools
 
 tools = ["python", "git", "docker", "node", "gcc", "java"]
@@ -19,7 +20,7 @@ def check_tools(tools):
     return results
 
 results_dict = check_tools(tools)
-print(results_dict)
+#print(results_dict)
 
 # Get tool's version if it's installed through subprocess
 
@@ -36,7 +37,7 @@ def get_version(results_dict):
 
     return results
 
-print(get_version(results_dict))
+#print(get_version(results_dict))
 
 # Just a simple function to print tools
 
@@ -48,6 +49,13 @@ def print_tools():
         else:
             print(f"{tool} not installed")
 
-print_tools()
 
+def show_report(print_tools):
+    pass
 
+print("""
+DevHub
+Developer Environment Assistant
+""")
+
+scan = input("Press enter to scan")
