@@ -65,3 +65,6 @@ console = Console()
 
 with console.status("[bold green]Scanning...") as status:
     time.sleep(1.5)
+
+if scan == "":
+    print_tools()
